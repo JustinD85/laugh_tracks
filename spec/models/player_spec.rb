@@ -31,5 +31,9 @@ describe Player, type: :model do
     it "should return avg age" do
       expect(Player.avg_age).to eq(Player.average(:age))
     end
+
+    it "should return hometowns" do
+      expect(Player.hometowns).to include(player_1.hometown,player_2.hometown)
+    end
   end
 end
