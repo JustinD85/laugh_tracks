@@ -23,8 +23,8 @@ card7 = Card.create(name:"Magnetic Force", cost: 30, description:"Takes you to a
 card8 = Card.create(name:"Get Groove Back", cost: 9999, description: "Gets ones groove back")
 card9 = Card.create(name:"Protect Groove", cost:99, description: "Prevents ones groove from being taken")
 
-p1.cards << card1 << card1 << card1 << card1 
-p2.cards << card1 << card3 << card6 << card4
+p1.cards << card1  
+p2.cards << card5 << card3 << card6 << card4 << card2
 p3.cards << card8 << card9 << card7
  
 #deck1 = (name: "Busted", p1, p1.Card)

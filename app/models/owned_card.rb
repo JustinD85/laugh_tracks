@@ -9,6 +9,6 @@ class OwnedCard < ApplicationRecord
 
   def limit
     errors.add(:base,"over limit") if player &&
-      player.cards.select(card_id).count > 3
+      player.cards.select(card_id).count > 4
   end
 end
