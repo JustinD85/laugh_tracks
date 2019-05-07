@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Deck do
 
   describe "relationships" do
-    #it { should have_many :owned_cards }
+#    it { should have_many :owned_cards }
   end
 
   describe "validations" do
