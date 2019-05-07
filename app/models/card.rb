@@ -1,6 +1,6 @@
 class Card < ApplicationRecord
-  has_many   :decks
-  has_many :players, through: :decks
+  has_many   :owned_cards
+  has_many :players, through: :owned_cards
   
   validates_presence_of :name
   validates_presence_of :cost

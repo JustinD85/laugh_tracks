@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Player.destroy_all
-
 p1 = Player.create(name: "Justin D",  age: 31, hometown:"Florida",image:"https://cdn.dribbble.com/users/567082/screenshots/4356358/profile_picture.png")
 
 p2 =Player.create(name: "Kurumi D",  age: 33, hometown:"Okinawa", image:"https://cdn.dribbble.com/users/567082/screenshots/4356358/profile_picture.png")
@@ -25,5 +23,8 @@ card7 = Card.create(name:"Magnetic Force", cost: 30, description:"Takes you to a
 card8 = Card.create(name:"Get Groove Back", cost: 9999, description: "Gets ones groove back")
 card9 = Card.create(name:"Protect Groove", cost:99, description: "Prevents ones groove from being taken")
 
-pcard1 = Player_Card.create(p1,card1)
+p1.cards << card1 << card2
+p2.cards << card1 << card3 << card6 << card4
+p3.cards << card8 << card9 << card7
+ 
 #deck1 = (name: "Busted", p1, p1.Card)

@@ -9,7 +9,8 @@ describe Player, type: :model do
   end
 
   describe "relationships" do
-    it { should have_many :cards }
+    it { should have_many :owned_cards }
+    it { should have_many(:cards).through(:owned_cards) }
   end
 
   describe "class methods" do

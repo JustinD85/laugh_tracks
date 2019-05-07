@@ -1,4 +1,5 @@
-class Deck < ApplicationRecord
+class OwnedCard < ApplicationRecord
   belongs_to :player
   belongs_to :card 
+
 end

@@ -1,5 +1,6 @@
 class Player < ApplicationRecord
-  has_many :cards
+  has_many :owned_cards
+  has_many :cards, through: :owned_cards
 
   validates_presence_of :name
   validates_presence_of :age

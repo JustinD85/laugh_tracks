@@ -8,7 +8,7 @@ describe Card, type: :model do
   end
 
   describe "relationship" do
-    it { should have_many(:decks) }
-    it { should have_many(:players).through(:decks) }
+    it { should have_many(:owned_cards) }
+    it { should have_many(:players).through(:owned_cards) }
   end
 end

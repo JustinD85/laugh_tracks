@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 20190506183037) do
     t.index ["player_id"], name: "index_cards_on_player_id"
   end
 
-  create_table "decks", force: :cascade do |t|
+  create_table "owned_cards", force: :cascade do |t|
     t.string "name"
     t.bigint "player_id"
     t.bigint "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["card_id"], name: "index_decks_on_card_id"
-    t.index ["player_id"], name: "index_decks_on_player_id"
+    t.index ["card_id"], name: "index_owned_cards_on_card_id"
+    t.index ["player_id"], name: "index_owned_cards_on_player_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -45,6 +45,6 @@ ActiveRecord::Schema.define(version: 20190506183037) do
   end
 
   add_foreign_key "cards", "players"
-  add_foreign_key "decks", "cards"
-  add_foreign_key "decks", "players"
+  add_foreign_key "owned_cards", "cards"
+  add_foreign_key "owned_cards", "players"
 end
