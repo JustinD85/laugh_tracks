@@ -14,15 +14,24 @@ describe Player, type: :model do
   end
 
   describe "class methods" do
+  attr_reader :player_1,:player_2
 
-    it "should players whose age match show_by_age arguement" do
-     player_1 = Player.create(name: "Joe", age: 31, hometown: "Springfield, MA", image: "https://cdn.dribbble.com/users/567082/screenshots/4356358/profile_picture.png")
-    player_2 = Player.create(name: "Jesse", age:41, hometown: "Galaxy, One", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcsgCEvJH9nG7sQdxuiB5ZFcYdO77YO3f10Ig-lOdCYxX9HrKb")
+    before :each do
 
-    player_1.cards.create(name: "Blue Dragon", cost:70, description: "This is the dragon to end all dragons")
+   @player_1 = create(:player) 
+   @player_2 = create(:player) 
+
+    player_1.cards << create(:card)
+    end
+
+    it "should return players whose age match show_by_age arguement" do
      
     expect(Player.select_by_age(player_1.age)).to  eq([player_1])
 
+    end
+
+    it "should return avg age" do
+      
     end
   end
 end
