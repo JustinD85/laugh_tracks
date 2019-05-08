@@ -5,23 +5,23 @@ RSpec.describe "when visiting players index path" do
 
   before :each do
     Player.destroy_all
-   
-    @player_1 = create(:player) 
+
+    @player_1 = create(:player)
     @player_1.cards << create(:card)
 
-    @player_2 = create(:player) 
+    @player_2 = create(:player)
     @player_2.cards << create(:card)
 
-    @player_3 = create(:player) 
-    @player_3.cards << create(:card) 
+    @player_3 = create(:player)
+    @player_3.cards << create(:card)
 
     visit '/players'
   end
 
-  Player.all.each do |player| 
+  Player.all.each do |player|
 
-    it "should see a list of players" do 
-    
+    it "should see a list of players" do
+
       within "#player-#{player.id}" do
         expect(page).to have_content("#{player.name}")
         expect(page).to have_content("#{player.age}")
@@ -33,11 +33,11 @@ RSpec.describe "when visiting players index path" do
     it "should see a list of each players cards with name,card cost, and details" do
       within "#player-#{player.id}-cards" do
         expect(page).to have_content("Cards: #{player.cards.count}")
-        
+
         player.cards.each do |card|
           expect(page).to have_content card.name
           expect(page).to have_content card.cost
-          expect(page).to have_content card.description 
+          expect(page).to have_content card.description
         end
       end
     end
