@@ -4,6 +4,7 @@ class CreatePlayers < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :age
       t.string :hometown
+      t.string :image
 
       t.timestamps
     end

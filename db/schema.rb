@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 20190507180959) do
   create_table "cards", force: :cascade do |t|
     t.string "name"
     t.integer "cost"
+    t.integer "attack"
+    t.integer "speed"
+    t.integer "range"
+    t.integer "defense"
+    t.integer "health"
+    t.integer "size"
+    t.string "card_image"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,11 +38,11 @@ ActiveRecord::Schema.define(version: 20190507180959) do
   end
 
   create_table "owned_cards", force: :cascade do |t|
+    t.integer "count"
     t.bigint "player_id"
     t.bigint "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "count"
     t.index ["card_id"], name: "index_owned_cards_on_card_id"
     t.index ["player_id"], name: "index_owned_cards_on_player_id"
   end
@@ -44,9 +51,9 @@ ActiveRecord::Schema.define(version: 20190507180959) do
     t.string "name"
     t.integer "age"
     t.string "hometown"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.index ["name"], name: "index_players_on_name", unique: true
   end
 
